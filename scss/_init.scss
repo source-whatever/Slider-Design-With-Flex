@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300');
+$gf: 'Roboto', YuGothic, 'Yu Gothic', 'ヒラギノ角ゴシック', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+$gf--Condensed: 'Roboto Condensed', sans-serif;
+
+@function get_vw($size, $viewport:320) {
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10) {
+    font-size: $font_size * 1px;
+    font-size: get_vw($font_size);
+}
+
+$pc:  "only screen and (min-width: 1280px)";
+$tablet:  "only screen and (min-width:479px) and (max-width:1024px)";
+$smartphone:  "only screen and (max-width:479px)";
+
+html {
+    font-size: 62.5%;
+    overflow: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    width: 100%;
+    position: relative; 
+    font-size: 1.6em;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    font-family: YuGothic, 'Yu Gothic', 'ヒラギノ角ゴシック', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
+    line-height: 1;
+    h1,h2,h3,h4,h5,h6{
+        font-weight: normal;
+    }
+    .button,
+    .button::before,
+    .button::after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    a {
+        text-decoration: none;
+        @extend .button;
+        &:hover {
+            cursor: pointer; 
+        }
+    }
+    img{
+        display: block;
+        border: none;
+    }
+}

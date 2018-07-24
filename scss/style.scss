@@ -1,0 +1,61 @@
+@import 'reset';
+@import 'color';
+@import 'init';
+#whatever {
+    width: 100%;
+    overflow: hidden;
+    .heading {
+        padding-bottom: 25px;
+        ul {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            display: -ms-flexbox;
+            /*IE10*/
+            justify-content: center;
+            -ms-flex-pack: center;
+            /*--- IE10 ---*/
+            li {
+                margin: 0 5px;
+                figure {
+                    height: 260px;
+                    overflow: hidden;
+                    position: relative;
+                    width: 640px;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                h2 {
+                    font-weight: bold;
+                    margin-top: 15px;
+                    .sub {
+                        color: $main;
+                        border: 1px solid $main;
+                        box-sizing: border-box;
+                        font-size: 12px;
+                        font-weight: normal;
+                        padding: 5px;
+                    }
+                    .ttl {
+                        display: block;
+                        font-size: 20px;
+                        margin-top: 15px;
+                    }
+                }
+                .category {
+                    color: $gray__add;
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
